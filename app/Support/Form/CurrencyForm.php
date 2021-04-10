@@ -140,7 +140,7 @@ class CurrencyForm
         unset($options['currency'], $options['placeholder']);
 
         // perhaps the currency has been sent to us in the field $amount_currency_id_$name (amount_currency_id_amount)
-        $preFilled      = session('preFilled');
+        $preFilled      = session('preFilled') ?? [];
         $key            = 'amount_currency_id_' . $name;
         $sentCurrencyId = array_key_exists($key, $preFilled) ? (int)$preFilled[$key] : $defaultCurrency->id;
 
