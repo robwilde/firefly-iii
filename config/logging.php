@@ -52,9 +52,9 @@ return [
     */
 
     'channels' => [
-        'stack'      => [
-            'driver'   => 'stack',
-            'channels' => ['daily', 'stdout'],
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['single', 'larabug'],
         ],
         'audit' => [
             'driver'   => 'stack',
@@ -117,6 +117,9 @@ return [
         'errorlog' => [
             'driver' => 'errorlog',
             'level'  => envNonEmpty('APP_LOG_LEVEL', 'info'),
+        ],
+        'larabug' => [
+            'driver' => 'larabug',
         ],
     ],
 
